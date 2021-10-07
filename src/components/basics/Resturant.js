@@ -6,8 +6,15 @@ import MenuCard from './MenuCard'
 
 const Resturant = () => {
     const [menuData, setMenuData] = useState(Menu)
-    const filterItem = (category) => {
 
+    // 
+    const filterItem = (category) => {
+        const updatedList = Menu.filter((currEle) => {
+            const tj = currEle.category;
+            console.log(tj);
+            return currEle.category === category;
+        })
+        setMenuData(updatedList);
     }
 
     return (
